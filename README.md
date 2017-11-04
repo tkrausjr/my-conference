@@ -1,26 +1,30 @@
 # HUGO Conference Website Code
 This REPO holds a HUGO generated Website with the config template to update and generate it.
 + Tested on OSX 10.12.6
-
-## Instructions for Deployment
+## Install Hugo
 + $ brew install hugo
 + $ hugo
+
+## Instructions for Building The Website off specific Template
 + $ cd gitHub/
 + $ hugo new site hugo-site
 + $ cd hugo-site/
 + $ git init
 + $ git clone https://github.com/jweslley/hugo-conference themes/hugo-conference
 + $ wget https://raw.githubusercontent.com/jweslley/hugo-conference/master/exampleSite/config.yml
-+ $ hugo server --watch (NOTE:  TEST the template site locally)
++ NOTE: Change "baseurl:" parameter to "/" so all static content will be referneced with realtive paths.
 + $ edit ./config.yml  (NOTE: Modify the ~/github/hugo-site/config.yml)
-+ $ hugo  (NOTE: This will generate a local copy of the site in /public folder inside the REPO folder)
++ $ hugo server -t hugo-conference --watch   (NOTE:  TEST the template site locally)
++ $ hugo -t hugo-conference  (NOTE: This will generate a local copy of the site in /public folder inside the REPO folder)
 
+## To Move the generated Website to our GO Project folder in the /public folder/
++ $ rm -rf ./public    (NOTE: To clean out older builds)
++ $ cp -R ./public ~/Documents/go-workspace/src/github/demo-app/
 
-## Outstanding - Things to do
-+ 
+## Run the site from Go net/http Module
++ $ cd /Users/kraust/Documents/go-workspace/src/github/demo-app
++ $ go run conference-app.go
 
-## Alternatives 
-
-
-## Sources of Manifests 
-+ 
+## Test
++ Note the PORT the server is Listening on:
++ Open Chrome and navigate to http://localhost:<port>  Defaults to :8080 
