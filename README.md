@@ -7,13 +7,13 @@ This REPO holds a HUGO generated Website with the config template to update and 
 
 ## Instructions for Building The Website off specific Template
 + $ cd gitHub/
-+ $ hugo new site hugo-site
-+ $ cd hugo-site/
++ $ hugo new site my-conference
++ $ cd my-conference
 + $ git init
 + $ git clone https://github.com/jweslley/hugo-conference themes/hugo-conference
-+ $ wget https://raw.githubusercontent.com/jweslley/hugo-conference/master/exampleSite/config.yml
-+ NOTE: Change "baseurl:" parameter to "/" so all static content will be referneced with realtive paths.
-+ $ edit ./config.yml  (NOTE: Modify the ~/github/hugo-site/config.yml)
++ $ cp themes/hugo-conference/exampleSite/config.yml .
++ NOTE: Change "baseurl:" parameter to "/" in config.yml so all static content will be referneced with realtive paths.
++ $ edit ./config.yml  (NOTE: Modify the ~/github/my-conference/config.yml)
 + $ hugo server -t hugo-conference --watch   (NOTE:  TEST the template site locally)
 + $ hugo -t hugo-conference  (NOTE: This will generate a local copy of the site in /public folder inside the REPO folder)
 
